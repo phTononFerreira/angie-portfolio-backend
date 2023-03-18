@@ -6,12 +6,12 @@ class AddNewImageService {
     const cloudinaryAPI = cloudinary.v2
 
     cloudinaryAPI.config({
-      cloud_name: "dgejoa3jk",
-      api_key: "382993585825893",
-      api_secret: "x5ew55_BKz7-dlAMK93WapGjbFA"
+      cloud_name: process.env.CLOUD_NAME,
+      api_key: process.env.API_KEY,
+      api_secret: process.env.API_SECRET
     })
 
-    // Tranformand buffer em 
+    // Tranformando buffer em 64bits
     const DatauriParser = require("datauri/parser");
     const parser = new DatauriParser();
     file.originalname = file.originalname.split('.')[0]
