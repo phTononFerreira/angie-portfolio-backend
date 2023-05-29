@@ -6,7 +6,7 @@ export function tokenCheck(req: Request, res: Response, next: NextFunction) {
         return res.status(401).end()
     }
 
-    if (SECRET_CODE === "AngelaLinda") {
+    if (SECRET_CODE === process.env.SECRET_CODE) {
         return next()
     } else {
         return res.status(401).end()
